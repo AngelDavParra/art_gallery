@@ -1,0 +1,83 @@
+@use "../abstracts/abstracts" as ab;
+
+.location {
+  background-color: ab.$black;
+  color: white;
+  font-style: normal;
+
+    &_maps {
+        position: relative;
+        & .botones {
+            position: absolute;
+            
+            & .btn {
+                @include ab.boton_2()
+            }
+            & .icon {
+                background-color: ab.$gold;
+                padding: 20px;
+            }
+        }
+
+        & iframe  {
+            width: 100%;
+        }
+    }
+
+    & .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        & .location_our{
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        & .location_moder{
+            & h4 {
+                font-size: 35px;
+                color: ab.$gold;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 18px;
+                font-weight: 300;
+            }
+            & p:nth-of-type(1){
+               white-space: pre-line;
+               margin-bottom: 30px;
+            }
+        }
+
+        @include ab.breakpoint(tablet){
+            display: flex;
+            gap: 120px;
+        }
+
+        @include ab.breakpoint(desktop){
+            & .location_our{
+              font-size: 70px;
+            }
+            & .location_moder{
+                width: 600px;
+                & h4 {
+                  font-size: 50px;
+                }
+                & p {
+                font-size: 22px;
+                }   
+            }  
+        }
+
+        @include ab.breakpoint(desktopxl){
+            & .location_our{
+               font-size: 80px;
+            }
+            & .location_moder{
+                width: 700px;
+                & h4 {
+                  font-size: 60px;
+                }
+            }
+        }
+    }
+}

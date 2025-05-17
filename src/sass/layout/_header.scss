@@ -1,0 +1,106 @@
+@use "../abstracts/abstracts" as ab;
+
+.header{
+    &_containt {
+        & figure {
+            width: 100vw;
+            height: 300px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }  
+        }
+
+        & .container {
+            & h1 {
+                width: 295px;
+                font-size: 60px;
+                font-weight: 900;
+                line-height: 1;
+                margin-bottom: 30px;
+            }
+            & p {
+                color: ab.$grey;
+                line-height: 1.7;
+                margin-bottom: 50px;
+                font-size: 18px;
+            }
+            & .botones{
+                display: flex;
+                & .btn {
+                    @include ab.boton()
+                }
+                & .icon {
+                    background-color: ab.$gold;
+                    padding: 20px;
+                }
+
+            }
+        }
+
+        @include ab.breakpoint(tablet){
+            height: 700px;
+            background-image: url(/src/img/rectangle_header.jpg);
+            background-repeat: no-repeat;
+            background-size: 500px 700px;
+            display: flex;
+            flex-shrink: 0;
+            & figure {
+                display: none;
+            }
+
+            & .container{
+                width: 40%;
+                margin-left: auto;
+                align-self: center;
+            }
+        }
+        @include ab.breakpoint(tablethorizontal){
+            background-position: center;
+            background-size: 450px 700px;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: ab.$black;
+                width: 50%;
+                height: 100%;
+                z-index: -1;
+            }
+
+            & .container {
+              width: 30%;
+              margin-right: 90px;
+
+              & h1 {
+                position: absolute;
+                width: 385px;
+                left: 100px;
+                color: ab.$white;
+                font-size: 80px;
+              }
+            }
+        }
+
+        @include ab.breakpoint(desktopxl) {
+            height: 100vh;
+            background-size: 35vw 100vh;
+            
+            & .container {
+                & h1 {
+                  width:485px ;
+                  left:300px;
+                  font-size: 100px;
+                }
+
+                & p{
+                    font-size: 30px;
+                }
+              }
+        }
+
+    }
+
+}

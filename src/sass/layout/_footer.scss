@@ -1,0 +1,76 @@
+@use "../abstracts/abstracts" as ab;
+
+
+.footer {
+  background-color: ab.$black;
+  padding: 50px 0px;
+  color: ab.$white;
+
+  &._location{
+    background-color: ab.$gold;
+  }
+  
+  & .container {
+    & .footer_logo {
+      margin-bottom: 30px;
+
+      &._location {
+        & p {
+          color: ab.$black;
+        }
+
+      }
+
+      & figure {
+          margin-bottom: 40px;
+          & img {
+            width: 150px;
+          }
+      }
+    
+      & p {
+         font-size: 18px;
+      }
+    }
+  
+    & .footer_social {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+  
+          &-icon {
+          width: 25px;
+          }
+    }
+  
+    @include ab.breakpoint(tablet){
+        display: flex;
+        gap: 120px;
+        justify-content: space-between;
+  
+        & .footer_logo {
+          display: flex;
+          gap: 100px;
+        }
+  
+        & .footer_social {
+          align-items: start;
+        }
+    }
+
+    @include ab.breakpoint(desktop){
+      & .footer_logo {
+        width: 70%;
+        & figure{
+          & img {
+            width: 220px;
+          }
+        }
+        & p{
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+}
