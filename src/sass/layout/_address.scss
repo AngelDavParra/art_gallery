@@ -11,7 +11,11 @@
             position: absolute;
             
             & .btn {
-                @include ab.boton_2()
+                @include ab.boton_2(){
+                }
+                &:hover .icon {
+                  background-color: ab.$black;
+                }
             }
             & .icon {
                 background-color: ab.$gold;

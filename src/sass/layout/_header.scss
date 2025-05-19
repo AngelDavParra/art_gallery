@@ -6,11 +6,11 @@
             width: 100vw;
             height: 300px;
 
-        & img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }  
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }  
         }
 
         & .container {
@@ -30,7 +30,12 @@
             & .botones{
                 display: flex;
                 & .btn {
-                    @include ab.boton()
+                    @include ab.boton(){
+                    }
+                    
+                    &:hover .icon {
+                        background-color: ab.$black;
+                    }
                 }
                 & .icon {
                     background-color: ab.$gold;
